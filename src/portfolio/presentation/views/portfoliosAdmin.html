@@ -1,0 +1,28 @@
+{% extends "./layout.html" %}
+
+{% block title %}Admin - Portfolio Admin - Portfolio Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card rounded mb-3 experience-title-card">
+                <div class="card-body p-4 text-center">
+                    <h5 class="card-title mb-4">Portfolio Admin</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {% for portfolioAdmin in portfoliosAdmin %}
+        <div class="col-md-4">
+            <div class="card rounded mb-3 experience-card">
+                <div class="card-body p-4">
+                    <a href="/portfolioAdmin/{{ portfolioAdmin.id }}">{{ portfolioAdmin.title }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

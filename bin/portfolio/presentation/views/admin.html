@@ -1,0 +1,31 @@
+{% extends "./layout.html" %}
+
+{% block title %}Admin Page - Portfolio Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card rounded mb-3 experience-title-card">
+                <div class="card-body p-4 text-center">
+                    <h5 class="card-title mb-4">Welcome to Admin Page</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card mb-3" style="height: 400px; padding: 20px; display: flex; align-items: center; justify-content: center;">
+                <div class="card-body text-center">
+                    <a href="/portfolioAdmin" class="btn btn-secondary mb-3" style="margin-top: 10%; margin-left:2%;height: 60px;
+    width: 200px;">Portfolio Admin</a>
+                    <a href="/experienceAdmin" class="btn btn-secondary mb-3" style="margin-top: 10%;margin-left:20%;height: 60px;
+    width: 200px;">Experience Admin</a>
+                    <a href="/aboutAdmin" class="btn btn-secondary" style="margin-top: 10%;margin-left:2%;height: 60px;
+    width: 200px;">About Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

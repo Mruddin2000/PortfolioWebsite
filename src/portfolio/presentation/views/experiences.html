@@ -1,0 +1,47 @@
+{% extends "./layout.html" %}
+
+{% block title %}Experience - Portfolio Website{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card rounded mb-3 experience-title-card">
+                    <div class="card-body p-4 text-center">
+                        <h1 class="card-title mt-0 mb-4">Experience</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card rounded mb-3 experience-card">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <ul class="list-unstyled flex-grow-1">
+                            {% for experienceFrontEnd in experiencesFrontEnd %}
+                                <li class="mb-2 d-flex align-items-center">
+                                    <i class="bi bi-check2-square me-2"></i>
+                                    <a href="/experienceFrontEnd/{{ experienceFrontEnd.id }}" class="experience-link">{{ experienceFrontEnd.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card rounded mb-3 experience-card">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <ul class="list-unstyled flex-grow-1">
+                            {% for experienceBackEnd in experiencesBackEnd %}
+                                <li class="mb-2 d-flex align-items-center">
+                                    <i class="bi bi-check2-square me-2"></i>
+                                    <a href="/experienceBackEnd	/{{ experienceBackEnd.id }}" class="experience-link">{{ experienceBackEnd.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

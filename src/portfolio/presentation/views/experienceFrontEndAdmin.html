@@ -1,0 +1,31 @@
+{% extends "./layout.html" %}
+
+{% block title %}{{ experienceFrontEndAdmin.title }} Admin - Portfolio Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card rounded mb-3 experience-title-card">
+                <div class="card-body p-4 text-center">
+                    <h5 class="card-title mb-2">Experience Front End Admin</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card rounded p-4 mb-4">
+                <form action="/submitExperienceFrontEndForm" method="post" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" id="id" name="id" value="{{ experienceFrontEndAdmin.id }}" required><br>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" class="form-control mb-3" placeholder="{{ experienceFrontEndAdmin.title }}" required>
+                    <label for="details">Description:</label>
+                    <textarea id="details" name="details" class="form-control mb-3" placeholder="{{ experienceFrontEndAdmin.details }}" required></textarea>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

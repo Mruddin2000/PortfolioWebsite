@@ -1,0 +1,32 @@
+{% extends "./layout.html" %}
+{% block title %}Portfolio - Portfolio Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card rounded mb-3 experience-title-card">
+                <div class="card-body p-4 text-center">
+                    <h1 class="card-title mt-0 mb-4">Portfolio</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="portfolioContainer">
+        {% for portfolio in portfolios %}
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card rounded experience-card">
+                <img class="card-img-top" src="data:image/png;base64,{{ portfolio.image }}" alt={{ portfolio.title }}>
+                <div class="card-body p-4">
+                                       <h5 class="card-title"><a href="/portfolio/{{ portfolio.id }}">{{ portfolio.title }}</a></h5>
+
+                    <p class="card-text">{{ portfolio.details }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

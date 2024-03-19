@@ -1,0 +1,37 @@
+{% extends "./layout.html" %}
+
+{% block title %}About Admin - Portfolio Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card rounded mb-3 experience-title-card">
+                <div class="card-body p-2 text-center"> <!-- Reduced padding to 2 -->
+                    <h5 class="card-title mb-0">About Admin</h5> <!-- Removed margin bottom -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card rounded p-2 mb-2">
+                <form action="/submitAboutForm" method="post" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" id="image" name="image" value="{{ aboutAdmin.image }}" required><br>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control mb-3" placeholder="{{ aboutAdmin.name }}" required>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" class="form-control mb-3" placeholder="{{ aboutAdmin.email }}" required>
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="text" id="contactNumber" name="contactNumber" class="form-control mb-3" placeholder="{{ aboutAdmin.contactNumber }}" required>
+                    <label for="qualification">Qualification:</label>
+                    <input type="text" id="qualification" name="qualification" class="form-control mb-3" placeholder="{{ aboutAdmin.qualification }}" required>
+                    <label for="occupation">Occupation:</label>
+                    <input type="text" id="occupation" name="occupation" class="form-control mb-3" placeholder="{{ aboutAdmin.occupation }}" required>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

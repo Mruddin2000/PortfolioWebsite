@@ -1,0 +1,46 @@
+{% extends "./layout.html" %}
+
+{% block title %}About - Portfolio Website{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card rounded mb-3 experience-title-card">
+                <div class="card-body p-4 text-center">
+                    <h5 class="card-title mb-4">Hi, I am {{ about[0].name }}</h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card rounded mb-3 experience-card">
+                <div class="card-body p-4">
+                    {% for about_info in about %}
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <img class="img-fluid" src="data:image/png;base64,{{ about_info.image }}" alt="About Image">
+                        </div>
+                        <div class="col-md-8 d-flex align-items-center">
+                            <div style="padding-left: 50px;"> <!-- Add padding-left -->
+                                
+                                <ul class="list-unstyled">
+                                    <li style="padding-left: 50px;">Email: <span class="fw-bold">{{ about_info.email }}</span></li> <!-- Add padding-left -->
+                                    <li style="padding-left: 50px;">Contact Number: <span class="fw-bold">{{ about_info.contactNumber }}</span></li> <!-- Add padding-left -->
+                                    <li style="padding-left: 50px;">Qualification: <span class="fw-bold">{{ about_info.qualification }}</span></li> <!-- Add padding-left -->
+                                    <li style="padding-left: 50px;">Occupation: <span class="fw-bold">{{ about_info.occupation }}</span></li> <!-- Add padding-left -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

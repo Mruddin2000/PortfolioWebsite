@@ -1,0 +1,28 @@
+{% extends "./layout.html" %}
+
+{% block title %}
+    {{ experienceFrontEnd.title }} - Experience - Portfolio Website
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card rounded mb-3 experience-title-card">
+                    <div class="card-body p-4 text-center">
+                        <h1 class="card-title mt-0 mb-4">{{ experienceFrontEnd.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card rounded mb-3 experience-card">
+                    <div class="card-body p-4">
+                        <p class="card-text">{{ experienceFrontEnd.details }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

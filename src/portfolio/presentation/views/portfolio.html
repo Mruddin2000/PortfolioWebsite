@@ -1,0 +1,27 @@
+{% extends "./layout.html" %}
+
+{% block title %}{{ portfolio.title }} - Portfolio Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title text-center">{{ portfolio.title }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card mb-3">
+                <img src="data:image/png;base64,{{ portfolio.image }}" class="card-img-top img-fluid" alt="Portfolio Image" style="max-height: 440px;">
+                <div class="card-body">
+                    <p class="card-text">Description: {{ portfolio.details }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
